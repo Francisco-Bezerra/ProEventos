@@ -487,5 +487,10 @@ testem.log
 .DS_Store
 Thumbs.db
 
+#excluindo DB
+*.db
+*.dm-shm
+*.db.wal
+
 
 
