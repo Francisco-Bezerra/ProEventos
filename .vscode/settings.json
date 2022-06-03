@@ -1,0 +1,5 @@
+{
+    "omnisharp.disableMSBuildDiagnosticWarning": false,
+    "omnisharp.sdkVersion": "",
+    "omnisharp.analyzeOpenDocumentsOnly": false
+}
