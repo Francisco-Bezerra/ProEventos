@@ -111,7 +111,7 @@ namespace ProEventos.Application
             }
         }
         
-        public async Task<EventoDto[]> GetEventosByTemaAsync(string tema, bool includePalestrantes = false)
+        public async Task<EventoDto[]> GetAllEventosByTemaAsync(string tema, bool includePalestrantes = false)
         {
             try
             {
