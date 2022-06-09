@@ -8,7 +8,7 @@
 	</div>
 
 	<div class="col-md-6">
-		<form [formGroup]="form" class="p-1">
+		<form [formGroup]="form" class="p-1" (ngSubmit)="register()">
       <div class="pb-2 d-block d-md-none">
         <h3 class="border-bottom">Cadastro de Usuário</h3>
       </div>
@@ -61,26 +61,26 @@
         <div class="form-group col-sm-6">
           <label for="">Senha:</label>
           <input class="form-control" type="password"
-          [ngClass]="{'is-invalid': f.senha.errors && f.senha.touched}"
-          formControlName="senha"
+          [ngClass]="{'is-invalid': f.password.errors && f.password.touched}"
+          formControlName="password"
           placeholder="Digite uma Senha" />
-          <div *ngIf="f.senha.errors?.required" class="invalid-feedback">
+          <div *ngIf="f.password.errors?.required" class="invalid-feedback">
             Senha é obrigatório.
           </div>
-          <div *ngIf="f.senha.errors?.minlength" class="invalid-feedback">
+          <div *ngIf="f.password.errors?.minlength" class="invalid-feedback">
             Senha deve ter no mínimo 6 caracteres.
           </div>
         </div>
         <div class="form-group col-sm-6">
           <label for="">Confirmar Senha:</label>
           <input class="form-control" type="password"
-          [ngClass]="{'is-invalid': f.confirmarSenha.errors && f.confirmarSenha.touched}"
-          formControlName="confirmarSenha"
+          [ngClass]="{'is-invalid': f.confirmarPassword.errors && f.confirmarPassword.touched}"
+          formControlName="confirmarPassword"
           placeholder="Confirme a Senha" />
-          <div *ngIf="f.confirmarSenha.errors?.required" class="invalid-feedback">
+          <div *ngIf="f.confirmarPassword.errors?.required" class="invalid-feedback">
             Confirmar Senha é obrigatório.
           </div>
-          <div *ngIf="f.confirmarSenha.errors?.mustMatch" class="invalid-feedback">
+          <div *ngIf="f.confirmarPassword.errors?.mustMatch" class="invalid-feedback">
             As senhas devem ser iguais.
           </div>
         </div>
@@ -93,7 +93,7 @@
       </div>
       <div class="row">
         <div class="d-grid gap-2">
-          <button class="btn btn-lg btn-success btn-block px-5">
+          <button [disabled]="!form.valid" class="btn btn-lg btn-success btn-block px-5" type="submit">
             Registar
           </button>
         </div>

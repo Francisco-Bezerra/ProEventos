@@ -11,7 +11,7 @@ import { Evento } from '@app/models/Evento';
 import { Lote } from '@app/models/Lote';
 import { LoteService } from '@app/services/lote.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { CurrencyPipe } from '@angular/common';
+
 import { environment } from '@environments/environment';
 
 @Component({
@@ -68,8 +68,7 @@ export class EventoDetalheComponent implements OnInit {
               private modalService: BsModalService,
               private spinner: NgxSpinnerService,
               private toastr: ToastrService,
-              private loteService: LoteService,
-              private currencyPipe: CurrencyPipe)
+              private loteService: LoteService)
   {
     this.localeService.use('pt-br');
   }
